@@ -1,0 +1,9 @@
+# 参考 mediamtx 默认配置，简化示例
+paths:
+  cam1:
+    # 将你的摄像头推流过来：
+    # ffmpeg -i rtsp://camera/stream -c copy -f rtsp rtsp://localhost:8554/cam1
+    readUser: ""
+    readPass: ""
+hls:
+  allowOrigin: "*"
