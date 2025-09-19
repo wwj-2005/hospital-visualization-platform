@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import os, time
 from influxdb_client import InfluxDBClient, Point
@@ -14,13 +14,6 @@ INFLUX_BUCKET = os.getenv("INFLUX_BUCKET")
 client = InfluxDBClient(url=INFLUX_URL, token=INFLUX_TOKEN, org=INFLUX_ORG)
 write_api = client.write_api(write_options=SYNCHRONOUS)
 query_api = client.query_api()
-
-class Device(BaseModel):
-    id: str
-    type: str
-    building: str
-    floor: str
-    status: str = "online"
 
 class MeasurementIn(BaseModel):
     device_id: str
@@ -46,7 +39,7 @@ def ingest(m: MeasurementIn):
 def last_metric(device_id: str, metric: str):
     q = f'''
     from(bucket: "{INFLUX_BUCKET}")
-      |> range(start: -15m)
+      |> range(start: -30m)
       |> filter(fn: (r) => r["device_id"] == "{device_id}" and r["metric"] == "{metric}")
       |> last()
     '''

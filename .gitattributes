@@ -1,0 +1,9 @@
+# 强制脚本/代码使用 LF，避免在 Linux 容器里执行失败
+*.sh text eol=lf
+*.py text eol=lf
+Dockerfile text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf

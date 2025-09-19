@@ -5,7 +5,6 @@ from influxdb_client.client.write_api import SYNCHRONOUS
 
 MQTT_HOST = os.getenv("MQTT_BROKER_URL","mqtt-broker")
 MQTT_PORT = int(os.getenv("MQTT_BROKER_PORT","1883"))
-
 INFLUX_URL = os.getenv("INFLUX_URL")
 INFLUX_TOKEN = os.getenv("INFLUX_TOKEN")
 INFLUX_ORG = os.getenv("INFLUX_ORG")

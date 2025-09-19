@@ -1,0 +1,15 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build api
+        run: docker build -t api-test ./services/api
+      - name: Build frontend
+        run: docker build -t fe-test ./services/frontend

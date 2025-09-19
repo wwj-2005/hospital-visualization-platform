@@ -14,8 +14,7 @@ Payload:
   "ts":"2025-09-19T02:30:11Z"
 }
 
-## 告警规则（预留）
-格式（草案）：
+## 告警规则（预留草案）
 {
   "id": "rule-high-temp",
   "metric": "temperature",

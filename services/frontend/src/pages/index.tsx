@@ -7,7 +7,6 @@ export default function Home() {
   const [metric, setMetric] = useState<any>(null);
 
   useEffect(() => {
-    // 简单加载 HLS 视频
     const hlsUrl = process.env.NEXT_PUBLIC_STREAM_BASE + "/cam1/index.m3u8";
     if (Hls.isSupported()) {
       const hls = new Hls();

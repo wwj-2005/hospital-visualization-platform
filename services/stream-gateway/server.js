@@ -13,5 +13,4 @@ app.get("/token/stream", (req, res) => {
   res.json({ token });
 });
 
-// TODO: 在生产中校验 token 后再允许访问实际流（Nginx 层或自定义签名 URL）
 app.listen(9000, () => console.log("Stream gateway on 9000"));

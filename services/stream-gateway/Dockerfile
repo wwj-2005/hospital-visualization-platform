@@ -4,4 +4,4 @@ COPY package.json .
 RUN npm install
 COPY server.js .
 EXPOSE 9000
-CMD ["node", "server.js"]
+CMD ["node","server.js"]

@@ -1,9 +1,4 @@
 #!/usr/bin/env python3
-"""
-更灵活的模拟数据发布器
-用法:
-  python scripts/publish_mock.py --interval 5 --count 3
-"""
 import os, time, json, random, argparse
 import paho.mqtt.client as mqtt
 
